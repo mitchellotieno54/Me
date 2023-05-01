@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Mitchelle Otieno - Software Developer specializing in cloud-based software development and modern applications.">
+    <meta name="author" content="Mitchelle Otieno">
+    <title>Mitchelle Otieno | Software Developer</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Meyawo main styles -->
+    <link rel="stylesheet" href="assets/css/meyawo.css">
+    <!-- Bold Modern Theme -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #ff6b35;
+            --primary-dark: #e55a2b;
+            --secondary: #004e89;
+            --accent: #1a659e;
+            --success: #06a77d;
+            --warning: #ffc857;
+            --bg-main: #0a1929;
+            --bg-secondary: #112240;
+            --bg-card: #1a2f4a;
+            --bg-accent: #233554;
+            --text-primary: #e6f1ff;
+            --text-secondary: #a8b2d1;
+            --text-muted: #8892b0;
+            --border: #2d3f5a;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --shadow-lg: rgba(0, 0, 0, 0.5);
+            --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            --gradient-secondary: linear-gradient(135deg, #004e89 0%, #1a659e 100%);
+            --gradient-accent: linear-gradient(135deg, #06a77d 0%, #00d4aa 100%);
+        }
+        
+        body {
+            background: var(--bg-main) !important;
+            color: var(--text-primary) !important;
+            min-height: 100vh;
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-primary);
+            border-radius: 6px;
+            border: 2px solid var(--bg-secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+        
+        .custom-navbar {
+            background: rgba(10, 25, 41, 0.9) !important;
+            backdrop-filter: blur(30px) saturate(180%);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 4px 30px var(--shadow);
+            padding: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-navbar .logo {
+            color: var(--primary) !important;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: -1px;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+        }
+        
+        .custom-navbar .logo:hover {
+            color: var(--warning) !important;
+            transform: scale(1.05);
+            text-shadow: 0 0 30px rgba(255, 200, 87, 0.5);
+        }
+        
+        .custom-navbar .link {
+            color: var(--text-secondary) !important;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.6rem 0;
+            margin: 0 0.5rem;
+        }
+        
+        .custom-navbar .link:hover {
+            color: var(--primary) !important;
+        }
+        
+        .custom-navbar .link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+        }
+        
+        .custom-navbar .link:hover::before {
+            width: 100%;
+        }
+        
+        .custom-navbar .btn-primary {
+            margin-left: 1.5rem;
+            padding: 0.7rem 1.8rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0a1929 0%, #112240 50%, #1a2f4a 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 10rem 0 6rem;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -15%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 25s ease-in-out infinite;
+            filter: blur(60px);
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -15%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(0, 78, 137, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite reverse;
+            filter: blur(60px);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            50% { transform: translate(50px, -50px) scale(1.1) rotate(180deg); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header-title {
+            color: var(--text-primary) !important;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 5.5rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .header-title .up {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        
+        .header-title .down {
+            display: block;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 6.5rem;
+            font-weight: 900;
+            text-shadow: 0 0 40px rgba(255, 107, 53, 0.3);
+        }
+        
+        .header-subtitle {
+            color: var(--warning) !important;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            text-shadow: 0 0 20px rgba(255, 200, 87, 0.3);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section {
+            background: var(--bg-main) !important;
+            position: relative;
+            padding: 7rem 0;
+        }
+        
+        .section.pt-0 {
+            padding-top: 5rem;
+        }
+        
+        .section-title {
+            color: var(--text-primary) !important;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+        }
+        
+        .section-subtitle {
+            color: var(--primary) !important;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+        
+        .service-card,
+        .testimonial-card,
+        .blog-card,
+        .pricing-card {
+            background: var(--bg-card) !important;
+            border: 2px solid var(--border) !important;
+            border-radius: 24px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            padding: 3rem;
+            height: 100%;
+            box-shadow: 0 8px 32px var(--shadow);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .service-card:hover::after {
+            opacity: 1;
+        }
+        
+        .service-card:hover,
+        .testimonial-card:hover,
+        .blog-card:hover,
+        .pricing-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--primary) !important;
+            box-shadow: 
+                0 25px 60px var(--shadow-lg),
+                0 0 40px rgba(255, 107, 53, 0.2);
+        }
+        
+        .service-card .icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 2rem;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(247, 147, 30, 0.15) 100%);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 107, 53, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .service-card:hover .icon {
+            transform: scale(1.15) translateY(-8px) rotate(5deg);
+            background: var(--gradient-primary);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+        
+        .service-card .title,
+        .testimonial-card-title,
+        .blog-card-title,
+        .pricing-card-title {
+            color: var(--text-primary) !important;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .service-card:hover .title {
+            color: var(--primary) !important;
+        }
+        
+        .service-card .subtitle,
+        .testimonial-card-subtitle,
+        .blog-card-body p {
+            color: var(--text-secondary) !important;
+            line-height: 1.9;
+            font-size: 1rem;
+        }
+        
+        .service-card .body {
+            padding: 0;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary) !important;
+            border: none !important;
+            border-radius: 14px;
+            padding: 16px 36px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--bg-main) !important;
+            transition: all 0.4s ease;
+            box-shadow: 
+                0 6px 20px rgba(255, 107, 53, 0.4),
+                0 0 30px rgba(255, 107, 53, 0.2);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn-primary:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 
+                0 12px 35px rgba(255, 107, 53, 0.6),
+                0 0 50px rgba(255, 107, 53, 0.4);
+        }
+        
+        .btn-outline-primary {
+            border: 3px solid var(--primary) !important;
+            color: var(--primary) !important;
+            border-radius: 14px;
+            padding: 14px 34px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            background: transparent !important;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
+        }
+        
+        .btn-outline-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+        
+        .btn-outline-primary:hover::before {
+            left: 0;
+        }
+        
+        .btn-outline-primary:hover {
+            color: var(--bg-main) !important;
+            border-color: var(--warning) !important;
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 
+                0 8px 25px rgba(255, 107, 53, 0.5),
+                0 0 40px rgba(255, 107, 53, 0.3);
+        }
+        
+        .portfolio-card-overlay {
+            background: var(--gradient-primary) !important;
+            opacity: 0.95;
+        }
+        
+        .portfolio-card-caption h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+        }
+        
+        .pricing-card-header {
+            background: var(--gradient-primary);
+            border-radius: 24px 24px 0 0;
+            padding: 3rem;
+            text-align: center;
+        }
+        
+        .pricing-card-icon {
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+        }
+        
+        .pricing-card-body {
+            padding: 2.5rem;
+        }
+        
+        .pricing-card-list p {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card-list p:hover {
+            color: var(--primary);
+            padding-left: 1.5rem;
+        }
+        
+        .pricing-card-footer {
+            padding: 2rem 2.5rem;
+            background: rgba(255, 107, 53, 0.1);
+            border-top: 2px solid var(--border);
+            color: var(--primary) !important;
+            font-weight: 800;
+            font-size: 1.6rem;
+        }
+        
+        .testimonial-card-body {
+            padding: 2.5rem;
+        }
+        
+        .blog-card-header {
+            overflow: hidden;
+            border-radius: 24px 24px 0 0;
+        }
+        
+        .blog-card-img {
+            transition: transform 0.6s ease;
+        }
+        
+        .blog-card:hover .blog-card-img {
+            transform: scale(1.15);
+        }
+        
+        .blog-card-body {
+            padding: 3rem;
+        }
+        
+        .blog-card-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        .form-control {
+            font-size: 1rem;
+            background: var(--bg-card) !important;
+            border: 2px solid var(--border) !important;
+            color: var(--text-primary) !important;
+            border-radius: 14px;
+            padding: 16px 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control::placeholder {
+            color: var(--text-muted) !important;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary) !important;
+            background: var(--bg-accent) !important;
+            box-shadow: 
+                0 0 0 4px rgba(255, 107, 53, 0.1),
+                0 0 30px rgba(255, 107, 53, 0.2);
+        }
+        
+        .footer {
+            padding: 4rem 0;
+            margin-top: 5rem;
+            background: var(--bg-secondary) !important;
+            border-top: 2px solid var(--border);
+        }
+        
+        .footer a {
+            color: var(--primary) !important;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--warning) !important;
+            text-shadow: 0 0 15px rgba(255, 200, 87, 0.5);
+        }
+        
+        .section-sm.bg-primary {
+            background: var(--gradient-primary) !important;
+        }
+        
+        .overlay {
+            background: rgba(10, 25, 41, 0.85) !important;
+        }
+        
+        .about-icon-holder {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 3rem;
+        }
+        
+        .tech-icons-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 3rem;
+            background: var(--bg-card);
+            border: 3px solid var(--border);
+            border-radius: 24px;
+            box-shadow: 
+                0 15px 40px var(--shadow),
+                0 0 30px rgba(255, 107, 53, 0.2);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-icons-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .tech-icons-container:hover {
+            transform: scale(1.05);
+            border-color: var(--primary);
+            box-shadow: 
+                0 20px 60px var(--shadow-lg),
+                0 0 50px rgba(255, 107, 53, 0.4);
+        }
+        
+        .tech-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(247, 147, 30, 0.15) 100%);
+            border: 2px solid rgba(255, 107, 53, 0.3);
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tech-icon i {
+            font-size: 3.5rem;
+            color: var(--primary);
+            transition: all 0.4s ease;
+        }
+        
+        .tech-icon:hover {
+            transform: translateY(-10px) scale(1.1) rotate(5deg);
+            background: var(--gradient-primary);
+            border-color: var(--primary);
+            box-shadow: 
+                0 15px 35px rgba(255, 107, 53, 0.5),
+                0 0 30px rgba(255, 107, 53, 0.4);
+        }
+        
+        .tech-icon:hover i {
+            color: var(--bg-main);
+            transform: scale(1.2);
+        }
+        
+        .tech-icon:nth-child(1) {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .tech-icon:nth-child(2) {
+            animation: float 3s ease-in-out infinite 0.5s;
+        }
+        
+        .tech-icon:nth-child(3) {
+            animation: float 3s ease-in-out infinite 1s;
+        }
+        
+        .tech-icon:nth-child(4) {
+            animation: float 3s ease-in-out infinite 1.5s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .about-caption {
+            padding: 2.5rem;
+        }
+        
+        .about-caption p {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--text-secondary);
+        }
+        
+        .portfolio-card {
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px var(--shadow);
+            border: 2px solid var(--border);
+        }
+        
+        .portfolio-card:hover {
+            border-color: var(--primary);
+            box-shadow: 
+                0 20px 50px var(--shadow-lg),
+                0 0 40px rgba(255, 107, 53, 0.3);
+        }
+        
+        .portfolio-card-img {
+            transition: transform 0.6s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-card-img {
+            transform: scale(1.15);
+        }
+        
+        a {
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--warning);
+            text-shadow: 0 0 10px rgba(255, 200, 87, 0.5);
+        }
+        
+        .blog-card-link {
+            color: var(--primary) !important;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.05rem;
+        }
+        
+        .blog-card-link:hover {
+            color: var(--warning) !important;
+        }
+        
+        .blog-card-caption a {
+            color: var(--primary) !important;
+        }
+        
+        .blog-card-caption a:hover {
+            color: var(--warning) !important;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 3.5rem;
+            }
+            
+            .header-title .down {
+                font-size: 4rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .service-card,
+            .testimonial-card,
+            .blog-card,
+            .pricing-card {
+                margin-bottom: 2.5rem;
+                padding: 2rem;
+            }
+        }
+        
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.5rem;
+            }
+            
+            .header-title .down {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .service-card,
+            .testimonial-card,
+            .blog-card,
+            .pricing-card {
+                margin-bottom: 2rem;
+            }
+        }
+        
+        /* Loading animation */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="#">Mitchelle Otieno</a>
+            <ul class="nav">
+                <li class="item">
+                    <a class="link" href="#home">Home</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#about">About</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#testmonial">Expertise</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#blog">Experience</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#contact">Contact</a>
+                </li>
+                <li class="item ml-md-3">
+                    <a href="https://github.com/mitchellotieno54" target="_blank" class="btn btn-primary">GitHub</a>
+                </li>
+            </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </a>
+        </div>
+    </nav><!-- End of Page Navbar -->
+
+    <!-- page header -->
+    <header id="home" class="header">
+        <div class="overlay"></div>
+        <div class="header-content container">
+            <h1 class="header-title">
+                <span class="up">HI!</span>
+                <span class="down">I am Mitchelle Otieno</span>
+            </h1>
+            <p class="header-subtitle">SOFTWARE DEVELOPER</p>
+
+            <a href="https://github.com/mitchellotieno54" target="_blank" class="btn btn-primary">View My GitHub</a>
+        </div>
+    </header><!-- end of page header -->
+
+    <!-- about section -->
+    <section class="section pt-0" id="about">
+        <!-- container -->
+        <div class="container text-center">
+            <!-- about wrapper -->
+            <div class="about">
+                <div class="about-icon-holder">
+                    <div class="tech-icons-container">
+                        <div class="tech-icon" data-icon="code">
+                            <i class="ti-code"></i>
+                        </div>
+                        <div class="tech-icon" data-icon="cloud">
+                            <i class="ti-cloud"></i>
+                        </div>
+                        <div class="tech-icon" data-icon="server">
+                            <i class="ti-server"></i>
+                        </div>
+                        <div class="tech-icon" data-icon="settings">
+                            <i class="ti-settings"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-caption">
+                    <p class="section-subtitle">Who Am I ?</p>
+                    <h2 class="section-title mb-3">About Me</h2>
+                    <p>
+                        I am a passionate Software Developer with a strong focus on building scalable, cloud-native applications 
+                        and modern software solutions. My expertise lies in designing and developing full-stack applications that 
+                        leverage cloud infrastructure for optimal performance, reliability, and scalability.
+                        <br><br>
+                        With hands-on experience in cloud platforms including AWS, Azure, and GCP, I specialize in developing 
+                        software applications, cloud-based solutions, microservices architectures, and modern web applications. 
+                        I am passionate about writing clean, efficient code and implementing best practices for cloud-based 
+                        software development that creates impactful solutions.
+                    </p>
+                    <a href="https://github.com/mitchellotieno54" target="_blank" class="btn-rounded btn btn-outline-primary mt-4">View GitHub Profile</a>
+                </div>
+            </div><!-- end of about wrapper -->
+        </div><!-- end of container -->
+    </section> <!-- end of about section -->
+
+    <!-- service section -->
+    <section class="section" id="service">
+        <div class="container text-center">
+            <p class="section-subtitle">What I Do ?</p>
+            <h6 class="section-title mb-6">Services & Skills</h6>
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/pencil-case.svg"
+                                alt="Cloud Software Development"
+                                class="icon">
+                            <h6 class="title">Cloud Software Development</h6>
+                            <p class="subtitle">Building scalable software applications on AWS, Azure, and GCP. 
+                                Developing cloud-native solutions with modern frameworks and best practices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/responsive.svg"
+                                alt="Full-Stack Development"
+                                class="icon">
+                            <h6 class="title">Full-Stack Development</h6>
+                            <p class="subtitle">Creating end-to-end software solutions with modern frontend and backend 
+                                technologies. Building responsive applications with cloud integration.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/toolbox.svg"
+                                alt="Cloud Integration"
+                                class="icon">
+                            <h6 class="title">Cloud Integration</h6>
+                            <p class="subtitle">Integrating applications with cloud services including AWS, Azure, and GCP. 
+                                Implementing cloud storage, databases, and serverless functions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/analytics.svg"
+                                alt="DevOps & Deployment"
+                                class="icon">
+                            <h6 class="title">DevOps & Deployment</h6>
+                            <p class="subtitle">Implementing CI/CD pipelines, containerization with Docker, and deploying 
+                                applications to cloud platforms. Automating software delivery processes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Skills Row -->
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <h6 class="section-title mb-4">Technical Skills</h6>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="service-card">
+                                <div class="body">
+                                    <h6 class="title">Programming Languages</h6>
+                                    <p class="subtitle">JavaScript, TypeScript, Python, Java, C#, Go</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="service-card">
+                                <div class="body">
+                                    <h6 class="title">Cloud Platforms</h6>
+                                    <p class="subtitle">AWS, Azure, GCP, Kubernetes, Docker</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="service-card">
+                                <div class="body">
+                                    <h6 class="title">Frameworks & Tools</h6>
+                                    <p class="subtitle">React, Node.js, Express, Django, Spring Boot, Git</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="service-card">
+                                <div class="body">
+                                    <h6 class="title">Cloud Services</h6>
+                                    <p class="subtitle">Lambda, EC2, S3, Azure Functions, Cloud Run, Firebase</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end of row -->
+        </div>
+    </section><!-- end of service section -->
+
+    <!-- portfolio section -->
+    <section class="section" id="portfolio">
+        <div class="container text-center">
+            <p class="section-subtitle">What I Did ?</p>
+            <h6 class="section-title mb-6">Projects & Portfolio</h6>
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="https://github.com/mitchellotieno54" target="_blank" class="portfolio-card">
+                        <img src="assets/imgs/folio-1.jpg" class="portfolio-card-img"
+                            alt="Cloud Applications">
+                        <span class="portfolio-card-overlay">
+                            <span class="portfolio-card-caption">
+                                <h4>Cloud Applications</h4>
+                                    <p class="font-weight-normal">Category: Full-Stack Cloud Solutions</p>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="https://github.com/mitchellotieno54" target="_blank" class="portfolio-card">
+                        <img class="portfolio-card-img" src="assets/imgs/folio-2.jpg" class="img-responsive rounded"
+                            alt="Software Solutions">
+                        <span class="portfolio-card-overlay">
+                            <span class="portfolio-card-caption">
+                                <h4>Software Solutions</h4>
+                                    <p class="font-weight-normal">Category: Cloud-Native Applications</p>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="https://github.com/mitchellotieno54" target="_blank" class="portfolio-card">
+                        <img class="portfolio-card-img" src="assets/imgs/folio-3.jpg" class="img-responsive rounded"
+                            alt="Cloud Integration">
+                        <span class="portfolio-card-overlay">
+                            <span class="portfolio-card-caption">
+                                <h4>Cloud Integration</h4>
+                                    <p class="font-weight-normal">Category: AWS, Azure & GCP Services</p>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </div><!-- end of row -->
+        </div><!-- end of container -->
+    </section> <!-- end of portfolio section -->
+
+    <!-- expertise section -->
+    <section class="section" id="pricing">
+        <div class="container text-center">
+            <p class="section-subtitle">My Expertise</p>
+            <h6 class="section-title mb-6">Areas of Specialization</h6>
+            <!-- row -->
+            <div class="pricing-wrapper">
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <img class="pricing-card-icon" src="assets/imgs/scooter.svg"
+                            alt="Cloud Software Development">
+                    </div>
+                    <div class="pricing-card-body">
+                        <h6 class="pricing-card-title">Cloud Software Development</h6>
+                        <div class="pricing-card-list">
+                            <p>AWS EC2, Lambda & S3</p>
+                            <p>Azure App Service & Functions</p>
+                            <p>GCP Cloud Run & Functions</p>
+                            <p>Microservices Architecture</p>
+                            <p>Containerization (Docker/K8s)</p>
+                            <p>Cloud-Native Applications</p>
+                        </div>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <span>Cloud</span>
+                        <span>Software</span>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <img class="pricing-card-icon" src="assets/imgs/shipped.svg"
+                            alt="Full-Stack Development">
+                    </div>
+                    <div class="pricing-card-body">
+                        <h6 class="pricing-card-title">Full-Stack Development</h6>
+                        <div class="pricing-card-list">
+                            <p>Frontend: React, Vue.js, Angular</p>
+                            <p>Backend: Node.js, Python, Java</p>
+                            <p>RESTful & GraphQL APIs</p>
+                            <p>Database Integration</p>
+                            <p>Cloud Service Integration</p>
+                            <p>Modern UI/UX Design</p>
+                        </div>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <span>Full</span>
+                        <span>Stack</span>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <img class="pricing-card-icon" src="assets/imgs/startup.svg"
+                            alt="DevOps & Cloud">
+                    </div>
+                    <div class="pricing-card-body">
+                        <h6 class="pricing-card-title">DevOps & Cloud</h6>
+                        <div class="pricing-card-list">
+                            <p>CI/CD Pipeline Implementation</p>
+                            <p>Cloud Deployment Strategies</p>
+                            <p>Infrastructure as Code (IaC)</p>
+                            <p>Container Orchestration</p>
+                            <p>Monitoring & Logging</p>
+                            <p>Cloud Security Best Practices</p>
+                        </div>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <span>DevOps</span>
+                        <span>Expert</span>
+                    </div>
+                </div>
+
+            </div><!-- end of pricing wrapper -->
+        </div> <!-- end of container -->
+    </section><!-- end of expertise section -->
+
+    <!-- section -->
+    <section class="section-sm bg-primary">
+        <!-- container -->
+        <div class="container text-center text-sm-left">
+            <!-- row -->
+            <div class="row align-items-center">
+                <div class="col-sm offset-md-1 mb-4 mb-md-0">
+                    <h6 class="title text-light">Want to work with me?</h6>
+                    <p class="m-0 text-light">Always feel Free to Contact & Hire me</p>
+                </div>
+                <div class="col-sm offset-sm-2 offset-md-3">
+                    <a href="https://github.com/mitchellotieno54" target="_blank" class="btn btn-lg my-font btn-light rounded">View GitHub</a>
+                </div>
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </section> <!-- end of section -->
+
+    <!-- competencies section -->
+    <section class="section" id="testmonial">
+        <div class="container text-center">
+            <p class="section-subtitle">Professional Focus</p>
+            <h6 class="section-title mb-6">Core Competencies</h6>
+
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card-body">
+                            <p class="testimonial-card-subtitle">Specialized in building scalable software applications 
+                                on cloud platforms including AWS, Azure, and GCP. Expert in developing full-stack solutions, 
+                                cloud-native applications, and modern software architectures. Proficient in designing 
+                                robust, high-performance applications that leverage cloud infrastructure for optimal results.</p>
+                            <h6 class="testimonial-card-title">Cloud Software Architect</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card-body">
+                            <p class="testimonial-card-subtitle">Experienced in full-stack development with expertise in 
+                                modern frameworks, cloud integration, and software architecture. Proficient in JavaScript, 
+                                TypeScript, Python, and Java for building efficient software solutions. Skilled in 
+                                implementing cloud services, CI/CD pipelines, and deploying applications to cloud platforms.</p>
+                            <h6 class="testimonial-card-title">Full-Stack & Cloud Specialist</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </section> <!-- end of competencies section -->
+
+    <!-- experience section -->
+    <section class="section" id="blog">
+        <!-- container -->
+        <div class="container text-center">
+            <p class="section-subtitle">Professional Experience</p>
+            <h6 class="section-title mb-6">Key Areas of Expertise</h6>
+            <!-- blog-wrapper -->
+            <div class="blog-card">
+                <div class="blog-card-header">
+                    <img src="assets/imgs/img-1.jpg" class="blog-card-img"
+                        alt="Cloud Backend System Development">
+                </div>
+                <div class="blog-card-body">
+                    <h5 class="blog-card-title">Cloud Software Application Development</h5>
+
+                        <p class="blog-card-caption">
+                            <a href="#">By: Mitchelle Otieno</a>
+                            <a href="https://github.com/mitchellotieno54" target="_blank"><i class="ti-github"></i> GitHub</a>
+                        </p>
+                        <p>Building scalable, high-performance software applications deployed on cloud platforms including AWS, Azure, 
+                            and GCP. Specializing in full-stack development, cloud-native applications, and modern software 
+                            architectures. Creating robust applications that leverage cloud infrastructure for optimal 
+                            performance and scalability.</p>
+
+                        <p><b>Key Focus Areas:</b> Full-Stack Development, Cloud-Native Applications, AWS Services (EC2, Lambda, S3), 
+                            Azure Services (App Service, Functions), GCP Services (Cloud Run, Cloud Functions), Docker & Kubernetes 
+                            Deployments, and Cloud Integration (Storage, Databases, APIs).</p>
+                        <p>Experienced in software development with JavaScript, TypeScript, Python, Java, and modern frameworks. 
+                            Proficient in implementing cloud services, CI/CD pipelines, containerization, and deploying applications 
+                            to cloud platforms. Skilled in optimizing application performance and implementing best practices for 
+                            cloud-based software development.</p>
+
+                        <a href="https://github.com/mitchellotieno54" target="_blank" class="blog-card-link">View Projects on GitHub <i class="ti-angle-double-right"></i></a>
+                </div>
+            </div><!-- end of blog wrapper -->
+
+            <!-- blog-wrapper -->
+            <div class="blog-card">
+                <div class="blog-card-header">
+                    <img src="assets/imgs/img-2.jpg" class="blog-card-img"
+                        alt="Cloud Integration & DevOps">
+                </div>
+                <div class="blog-card-body">
+                    <h5 class="blog-card-title">Cloud Integration & DevOps</h5>
+
+                        <p class="blog-card-caption">
+                            <a href="#">By: Mitchelle Otieno</a>
+                            <a href="https://github.com/mitchellotieno54" target="_blank"><i class="ti-github"></i> GitHub</a>
+                        </p>
+
+                        <p>Integrating software applications with cloud services and implementing DevOps practices for efficient 
+                            software delivery. Working with CI/CD pipelines, containerization, infrastructure as code, and 
+                            automated deployment strategies. Ensuring applications are scalable, reliable, and performant in 
+                            cloud environments.</p>
+                        <p>Experienced in cloud service integration including AWS, Azure, and GCP services. Skilled in implementing 
+                            monitoring, logging, and alerting solutions. Proficient in container orchestration with Kubernetes, 
+                            Docker containerization, and cloud-native deployment strategies. Creating comprehensive deployment 
+                            pipelines and ensuring software quality through automated testing and continuous integration.</p>
+
+                        <a href="https://github.com/mitchellotieno54" target="_blank" class="blog-card-link">Explore Software Projects <i class="ti-angle-double-right"></i></a>
+                </div>
+            </div><!-- end of blog wrapper -->
+
+        </div><!-- end of container -->
+    </section><!-- end of experience section -->
+
+    <!-- contact section -->
+    <section class="section" id="contact">
+        <div class="container text-center">
+            <p class="section-subtitle">How can you communicate?</p>
+            <h6 class="section-title mb-5">Contact Me</h6>
+            <div class="mb-5">
+                <p class="mb-3">Connect with me on GitHub or reach out for software development, cloud applications, full-stack development, or cloud integration services.</p>
+                <a href="https://github.com/mitchellotieno54" target="_blank" class="btn btn-primary btn-lg">
+                    <i class="ti-github"></i> Visit My GitHub Profile
+                </a>
+            </div>
+            <!-- contact form -->
+            <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <input type="text" size="50" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <input type="email" class="form-control" placeholder="Enter Email" required>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <textarea name="comment" id="comment" rows="6" class="form-control"
+                            placeholder="Write Something"></textarea>
+                    </div>
+                    <div class="form-group col-sm-12 mt-3">
+                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
+                    </div>
+                </div>
+            </form><!-- end of contact form -->
+        </div><!-- end of container -->
+    </section><!-- end of contact section -->
+
+    <!-- footer -->
+    <div class="container">
+        <footer class="footer">
+            <p class="mb-0">Copyright
+                <script>document.write(new Date().getFullYear())</script> &copy; <a
+                    href="https://github.com/mitchellotieno54" target="_blank">Mitchelle Otieno</a> | Software Developer
+            </p>
+            <div class="social-links text-right m-auto ml-sm-auto">
+                <a href="https://github.com/mitchellotieno54" target="_blank" class="link" title="GitHub"><i class="ti-github"></i></a>
+                <a href="https://github.com/mitchellotieno54" target="_blank" class="link" title="GitHub Profile"><i class="ti-link"></i></a>
+            </div>
+        </footer>
+    </div> <!-- end of page footer -->
+
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Meyawo js -->
+    <script src="assets/js/meyawo.js"></script>
+
+</body>
+
+</html>
